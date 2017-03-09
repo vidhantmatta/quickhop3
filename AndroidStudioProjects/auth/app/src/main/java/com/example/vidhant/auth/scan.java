@@ -59,7 +59,7 @@ public class scan extends AppCompatActivity {
                 SharedPreferences.Editor editor = sf.edit();
                 editor.putString(saveit, temp);
                 editor.commit();
-                
+
 
 
 
