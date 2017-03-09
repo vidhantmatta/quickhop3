@@ -15,7 +15,6 @@ import com.google.zxing.integration.android.IntentResult;
 public class scan extends AppCompatActivity {
     Button scan;
     String temp;
-    String m;
     SharedPreferences sf;
     public static final String preference = "pref";
     public static final String saveit = "savekey";
