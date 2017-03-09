@@ -3,8 +3,8 @@ package com.example.vidhant.auth;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -18,6 +18,9 @@ public class scan extends AppCompatActivity {
     SharedPreferences sf;
     public static final String preference = "pref";
     public static final String saveit = "savekey";
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +59,9 @@ public class scan extends AppCompatActivity {
                 SharedPreferences.Editor editor = sf.edit();
                 editor.putString(saveit, temp);
                 editor.commit();
-                Intent i = new Intent(scan.this, Main2Activity.class);
-                startActivity(i);
+                
+
+
 
 
             }
@@ -65,4 +69,8 @@ public class scan extends AppCompatActivity {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
+
+
+
+
 }

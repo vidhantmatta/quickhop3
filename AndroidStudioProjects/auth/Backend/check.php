@@ -15,8 +15,9 @@
  $result = array();
  
  array_push($result,array(
- "Name"=>$res['Name'],
- "value"=>$res['value']
+ 
+ "Name"=>$res['value'],
+"Price"=>$res['coffee']
  
  )
  );
