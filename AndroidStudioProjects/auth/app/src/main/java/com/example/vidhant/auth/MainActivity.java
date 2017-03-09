@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             signin.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent in1 = new Intent(MainActivity.this, Main2Activity.class);
+                    Intent in1 = new Intent(MainActivity.this, scan.class);
                     startActivity(in1);
                 }
 
