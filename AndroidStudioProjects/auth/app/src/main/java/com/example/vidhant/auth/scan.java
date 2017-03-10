@@ -59,6 +59,11 @@ public class scan extends AppCompatActivity {
                 SharedPreferences.Editor editor = sf.edit();
                 editor.putString(saveit, temp);
                 editor.commit();
+                Intent i=new Intent(scan.this, Main2Activity.class);
+                i.putExtra ( "TextBox", temp.toString() );
+                startActivity(i);
+
+
 
 
 
