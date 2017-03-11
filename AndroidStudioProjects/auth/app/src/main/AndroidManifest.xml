@@ -33,7 +33,6 @@
         <activity android:name=".Main2Activity" />
         <activity android:name=".introone" />
         <activity android:name=".scan" />
-        <activity android:name=".Main3Activity"></activity>
     </application>
 
 </manifest>

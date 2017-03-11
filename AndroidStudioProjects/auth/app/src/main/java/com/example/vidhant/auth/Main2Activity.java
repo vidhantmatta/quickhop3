@@ -46,6 +46,17 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
 
         editTextId.setText ( text );
         buttonGet.performClick();
+
+
+        Button btnauto=(Button) findViewById(R.id.btnauto);
+        btnauto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i1 = new Intent(Main2Activity.this,scan.class);
+                startActivity(i1);
+            }
+
+        });
     }
 
     private void getData() {
