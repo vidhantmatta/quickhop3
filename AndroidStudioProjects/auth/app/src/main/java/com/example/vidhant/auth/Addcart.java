@@ -1,5 +1,6 @@
 package com.example.vidhant.auth;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -28,8 +29,8 @@ public class Addcart extends AppCompatActivity implements  View.OnClickListener 
         btn1= (Button) findViewById(R.id.btn3);
         btn1.setOnClickListener(this);
         btn1.performClick();
-        btn2=(Button)findViewById(R.id.btn2);
-        btn2.performClick();
+
+
 
 
     }
@@ -73,7 +74,19 @@ public class Addcart extends AppCompatActivity implements  View.OnClickListener 
     public void onClick(View v) {
         if (v == btn1) {
             addinfo();
+                buttonclick();
         }
+    }
+    private void buttonclick() {
+        btn2 = (Button) findViewById(R.id.shop);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in1 = new Intent(Addcart.this, scan.class);
+                startActivity(in1);
+            }
+
+        });
     }
 }
 

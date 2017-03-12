@@ -15,5 +15,6 @@ public class Config {
         public static String KEY_ID = "id";
         public static String KEY_NAME = "Name";
         public static String KEY_PRICE = "Price";
+        public static final String CARTJSON_ARRAY="result";
 
 }

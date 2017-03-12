@@ -14,18 +14,18 @@ import com.google.zxing.integration.android.IntentResult;
 
 public class scan extends AppCompatActivity {
     Button scan;
+    Button cart;
     String temp;
     SharedPreferences sf;
     public static final String preference = "pref";
     public static final String saveit = "savekey";
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan);
+        buttonclick();
         scan = (Button) findViewById(R.id.scan);
         sf = getSharedPreferences(preference, Context.MODE_PRIVATE);
         scan.setOnClickListener(new View.OnClickListener() {
@@ -59,14 +59,9 @@ public class scan extends AppCompatActivity {
                 SharedPreferences.Editor editor = sf.edit();
                 editor.putString(saveit, temp);
                 editor.commit();
-                Intent i=new Intent(scan.this, Main2Activity.class);
-                i.putExtra ( "TextBox", temp.toString() );
+                Intent i = new Intent(scan.this, Main2Activity.class);
+                i.putExtra("TextBox", temp.toString());
                 startActivity(i);
-
-
-
-
-
 
 
             }
@@ -75,7 +70,16 @@ public class scan extends AppCompatActivity {
         }
     }
 
+    private void buttonclick() {
+        cart = (Button) findViewById(R.id.cart);
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in1 = new Intent(scan.this, cart.class);
+                startActivity(in1);
+            }
 
 
-
+        });
+    }
 }

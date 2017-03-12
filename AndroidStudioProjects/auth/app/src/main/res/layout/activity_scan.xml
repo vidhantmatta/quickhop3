@@ -19,6 +19,14 @@
         android:layout_marginTop="169dp"
         tools:text="scan"
         />
+    <Button
+    android:text="cart"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:id="@+id/cart"
+    android:layout_alignParentBottom="true"
+    android:layout_marginTop="169dp"
+    tools:text="scan"/>
     <TextView
 
         android:layout_width="match_parent"
