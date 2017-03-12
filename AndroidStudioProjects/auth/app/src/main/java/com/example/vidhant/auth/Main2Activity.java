@@ -27,7 +27,11 @@ import org.json.JSONObject;
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener {
     private EditText editTextId;
     private Button buttonGet;
+    Button btnauto;
     private TextView textViewResult;
+    public static String Name;
+    public static String Price;
+    public static String id;
 
     private ProgressDialog loading;
 
@@ -41,22 +45,12 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         textViewResult = (TextView) findViewById(R.id.textviewresult);
 
         buttonGet.setOnClickListener(this);
+
         Intent i = getIntent();
-        String text = i.getStringExtra ( "TextBox" );
+        id = i.getStringExtra("TextBox");
 
-        editTextId.setText ( text );
+        editTextId.setText(id);
         buttonGet.performClick();
-
-
-        Button btnauto=(Button) findViewById(R.id.btnauto);
-        btnauto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i1 = new Intent(Main2Activity.this,scan.class);
-                startActivity(i1);
-            }
-
-        });
     }
 
     private void getData() {
@@ -65,9 +59,9 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
             Toast.makeText(this, "Please enter an id", Toast.LENGTH_LONG).show();
             return;
         }
-        loading = ProgressDialog.show(this,"Please wait...","Fetching...",false,false);
+        loading = ProgressDialog.show(this, "Please wait...", "Fetching...", false, false);
 
-        String url = Config.DATA_URL+editTextId.getText().toString().trim();
+        String url = Config.DATA_URL + editTextId.getText().toString().trim();
 
         StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
             @Override
@@ -79,18 +73,18 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(Main2Activity.this,error.getMessage().toString(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(Main2Activity.this, error.getMessage().toString(), Toast.LENGTH_LONG).show();
                     }
                 });
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+
     }
 
-    private void showJSON(String response){
-        String Name="";
+    private void showJSON(String response) {
 
-        String Price = "";
+
         try {
             JSONObject jsonObject = new JSONObject(response);
             JSONArray result = jsonObject.getJSONArray(Config.JSON_ARRAY);
@@ -100,7 +94,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        textViewResult.setText("Name:\t"+ Name+ "\nPrice:\t"+ Price);
+        textViewResult.setText("Name:\t" + Name + "\nPrice:\t" + Price);
 
 
     }
@@ -108,6 +102,23 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        getData();
+        if (v == buttonGet)
+            getData();
+                buttonclick();
+    }
+
+
+
+    private void buttonclick() {
+        btnauto = (Button) findViewById(R.id.btnauto1);
+        btnauto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in1 = new Intent(Main2Activity.this, Addcart.class);
+                startActivity(in1);
+            }
+
+        });
+
     }
 }

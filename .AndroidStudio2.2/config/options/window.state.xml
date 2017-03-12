@@ -1,7 +1,10 @@
 <application>
   <component name="WindowStateApplicationService">
-    <state x="165" y="180" width="1101" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog" />
-    <state x="165" y="180" width="1101" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.768" />
-    <state x="165" y="180" width="1101" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.768@0.0.1366.768" />
+    <state x="180" y="173" width="1040" height="595" key="DiffContextDialog" />
+    <state x="180" y="173" width="1040" height="595" key="DiffContextDialog/0.0.1366.768" />
+    <state x="180" y="173" width="1040" height="595" key="DiffContextDialog/0.0.1366.768@0.0.1366.768" />
+    <state x="165" y="224" width="1101" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog" />
+    <state x="165" y="224" width="1101" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.768" />
+    <state x="165" y="224" width="1101" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.768@0.0.1366.768" />
   </component>
 </application>

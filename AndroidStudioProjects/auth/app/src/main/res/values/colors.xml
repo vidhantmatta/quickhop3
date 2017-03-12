@@ -8,6 +8,8 @@
     <color name="introtwo">#FFD54F</color> 
     <color name="introthree">#CE93D8</color> 
     <color name="introfour">#FF8A65</color>
+    <color name="grey">#89949E</color>
+    <color name="greyback">#D9E2E9</color>
 
 
 </resources>
