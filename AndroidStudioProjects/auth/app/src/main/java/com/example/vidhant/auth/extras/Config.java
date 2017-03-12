@@ -15,6 +15,7 @@ public class Config {
         public static String KEY_ID = "id";
         public static String KEY_NAME = "Name";
         public static String KEY_PRICE = "Price";
-        public static final String CARTJSON_ARRAY="result";
+        public static final String JSON_ARRAYCART="result";
+        public static final String KEY_RURL= "http://www.theminimalist.esy.es/getall.php";
 
 }
