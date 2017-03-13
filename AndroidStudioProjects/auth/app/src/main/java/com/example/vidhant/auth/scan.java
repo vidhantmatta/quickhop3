@@ -15,6 +15,7 @@ import com.google.zxing.integration.android.IntentResult;
 public class scan extends AppCompatActivity {
     ImageButton scan;
     ImageButton cart;
+    ImageButton wallet;
     String temp;
     SharedPreferences sf;
     public static final String preference = "pref";
@@ -26,6 +27,7 @@ public class scan extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan);
         buttonclick();
+        buttonclick1();
         scan = (ImageButton) findViewById(R.id.scan);
         sf = getSharedPreferences(preference, Context.MODE_PRIVATE);
         scan.setOnClickListener(new View.OnClickListener() {
@@ -82,4 +84,18 @@ public class scan extends AppCompatActivity {
 
         });
     }
+    private void buttonclick1()
+    {
+        wallet = (ImageButton) findViewById(R.id.wallet);
+        wallet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in2 = new Intent(scan.this,cart.class);
+                startActivity(in2);
+            }
+
+
+        });
+    }
+
 }
