@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -18,6 +19,7 @@ public class cart extends AppCompatActivity implements View.OnClickListener{
 
     private Button buttonget;
     private ListView listView;
+    double p;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,10 @@ public class cart extends AppCompatActivity implements View.OnClickListener{
 
         parsejson  pj= new parsejson( json);
         pj.parsejson();
+        TextView textView= (TextView)findViewById(R.id.textView);
+        p=pj.price;
+        String s=Double.toString(p);
+        textView.setText(s);
         customlistview cl = new customlistview(this, parsejson.ids,parsejson.Names,parsejson.Prices);
         listView.setAdapter(cl);
     }
