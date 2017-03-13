@@ -9,4 +9,9 @@
     <string name="introthreemain">Dont worry we have got your six! We accept digital payments.</string>
     <string name="introfourheader">Curious Yet?</string>
     <string name="introfourmain">Come check us out.</string>
+    <string name="gridtext">Abhit Roy</string>
+    <string name="scan">scan</string>
+    <string name="records">Records</string>
+    <string name="payment">Payment</string>
+    <string name="cart">Cart</string>
 </resources>
