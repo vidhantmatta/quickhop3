@@ -1,9 +1,11 @@
 package com.example.vidhant.auth;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,11 +22,14 @@ public class cart extends AppCompatActivity implements View.OnClickListener{
     private Button buttonget;
     private ListView listView;
     double p;
+    String s;
+    Button checkout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
+        buttonclick1();
         buttonget = (Button) findViewById(R.id.buttonGet);
         buttonget.setOnClickListener(this);
         buttonget.performClick();
@@ -57,7 +62,7 @@ public class cart extends AppCompatActivity implements View.OnClickListener{
         pj.parsejson();
         TextView textView= (TextView)findViewById(R.id.textView);
         p=pj.price;
-        String s=Double.toString(p);
+        s=Double.toString(p);
         textView.setText(s);
         customlistview cl = new customlistview(this, parsejson.ids,parsejson.Names,parsejson.Prices);
         listView.setAdapter(cl);
@@ -65,9 +70,25 @@ public class cart extends AppCompatActivity implements View.OnClickListener{
 
 
 
-
     @Override
     public void onClick(View v) {
         sendRequest();
+    }
+
+
+
+    private void buttonclick1()
+    {
+        checkout = (Button) findViewById(R.id.checkout);
+        checkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in2 = new Intent(cart.this,payment.class);
+                in2.putExtra("amount",s);
+                startActivity(in2);
+            }
+
+
+        });
     }
 }
