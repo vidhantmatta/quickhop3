@@ -2,7 +2,6 @@ package com.example.vidhant.auth;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,7 +13,7 @@ import com.razorpay.PaymentResultListener;
 
 import org.json.JSONObject;
 
-public class payment extends Activity implements PaymentResultListener {
+public class payment extends Activity implements PaymentResultListener, View.OnClickListener {
     private static final String TAG = payment.class.getSimpleName();
 String s1="";
     String s2="";
@@ -29,12 +28,9 @@ String s1="";
         double d=Double.parseDouble(s1);
         d=d*100;
         s2=Double.toString(d);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startPayment();
-            }
-        });
+        button.setOnClickListener(this);
+        button.performClick();
+
     }
     public void startPayment() {
         /**
@@ -54,8 +50,8 @@ String s1="";
             options.put("amount", s2);
 
             JSONObject preFill = new JSONObject();
-            preFill.put("email", "E-mail");
-            preFill.put("contact", "Enter your PhoneNo");
+            preFill.put("email", "Email");
+            preFill.put("contact", "Phone");
 
             options.put("prefill", preFill);
 
@@ -97,4 +93,8 @@ String s1="";
         }
     }
 
+    @Override
+    public void onClick(View v) {
+        startPayment();
+    }
 }

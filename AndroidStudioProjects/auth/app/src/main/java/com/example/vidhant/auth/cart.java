@@ -1,11 +1,11 @@
 package com.example.vidhant.auth;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +24,7 @@ public class cart extends AppCompatActivity implements View.OnClickListener{
     double p;
     String s;
     Button checkout;
+    private ProgressDialog loading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +39,14 @@ public class cart extends AppCompatActivity implements View.OnClickListener{
 
 
     private void sendRequest(){
+        loading = ProgressDialog.show(this, "Please wait...", "Fetching...", false, false);
 
         StringRequest stringRequest = new StringRequest(Config.KEY_RURL,
                 new Response.Listener<String>() {
+
                     @Override
                     public void onResponse(String response) {
+                        loading.dismiss();
                         showJSON(response);
                     }
                 },

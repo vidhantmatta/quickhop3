@@ -94,7 +94,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        textViewResult.setText("Name:\t" + Name + "\nPrice:\t" + Price);
+        textViewResult.setText("Name:\t" + Name + "\nPrice:\tRs:" + Price);
 
 
     }
