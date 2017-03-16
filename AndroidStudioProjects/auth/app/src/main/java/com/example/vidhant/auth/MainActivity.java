@@ -8,6 +8,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.vidhant.auth.extras.SessionManagement2;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText passEditText;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -29,9 +31,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void checkLogin(View arg0) {
-
-
-
 
 
         final String email = emailEditText.getText().toString();
@@ -46,10 +45,9 @@ public class MainActivity extends AppCompatActivity {
             passEditText.setError("Too short");
         }
 
-        if(isValidEmail(email) && isValidPassword(pass))
-        {
+        if (isValidEmail(email) && isValidPassword(pass)) {
             // Validation Completed
-            Button signin=(Button) findViewById(R.id.signin);
+            Button signin = (Button) findViewById(R.id.signin);
             signin.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -63,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // validating email id
-    private boolean isValidEmail(String email) {
+    public boolean isValidEmail(String email) {
         String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
                 + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
@@ -73,10 +71,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // validating password
-    private boolean isValidPassword(String pass) {
+    public boolean isValidPassword(String pass) {
         if (pass != null && pass.length() >= 4) {
             return true;
         }
         return false;
     }
+    public void session()
+    {
+        SessionManagement2 obj=new SessionManagement2(getApplicationContext());
+        obj.login();
+        obj.emaildone();
+        obj.passdone();
+    }
+
+
 }

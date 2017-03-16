@@ -40,6 +40,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+
         editTextId = (EditText) findViewById(R.id.editTextId1);
         buttonGet = (Button) findViewById(R.id.buttonGet1);
         textViewResult = (TextView) findViewById(R.id.textviewresult);

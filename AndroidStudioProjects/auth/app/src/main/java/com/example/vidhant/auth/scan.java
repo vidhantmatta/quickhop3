@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -13,9 +14,9 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 public class scan extends AppCompatActivity {
-    ImageButton scan;
-    ImageButton cart;
-    ImageButton wallet;
+    Button scan;
+    Button cart;
+    Button wallet;
     String temp;
     SharedPreferences sf;
     public static final String preference = "pref";
@@ -28,7 +29,7 @@ public class scan extends AppCompatActivity {
         setContentView(R.layout.activity_scan);
         buttonclick();
         buttonclick1();
-        scan = (ImageButton) findViewById(R.id.scan);
+        scan = (Button) findViewById(R.id.scan);
         sf = getSharedPreferences(preference, Context.MODE_PRIVATE);
         scan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +74,7 @@ public class scan extends AppCompatActivity {
     }
 
     private void buttonclick() {
-        cart = (ImageButton) findViewById(R.id.cart);
+        cart = (Button) findViewById(R.id.cart);
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,7 +87,7 @@ public class scan extends AppCompatActivity {
     }
     private void buttonclick1()
     {
-        wallet = (ImageButton) findViewById(R.id.wallet);
+        wallet = (Button) findViewById(R.id.payment);
         wallet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

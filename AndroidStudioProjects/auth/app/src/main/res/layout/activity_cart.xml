@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fafafa">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:orientation="vertical"
@@ -14,25 +19,46 @@
         android:layout_height="10dp"
         android:text="Get Data"
         android:alpha="2"
-        android:id="@+id/buttonGet" />
+        android:id="@+id/buttonGet"
 
+        />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/list"
+        >
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="338dp"
+        android:layout_height="400dp"
         android:id="@+id/listView" />
-
+    </LinearLayout>
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="TextView" />
-
-    <Button
-        android:id="@+id/checkout"
+        android:text="TextView"
+        android:layout_marginTop="400dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.55"
-        android:text="Checkout" />
+        android:layout_height="70dp"
+        android:layout_below="@+id/list"
+
+        android:layout_marginTop="180dp"
+        >
 
 
-</LinearLayout>
+        <Button
+            android:id="@+id/checkout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+
+            android:background="@color/buttoncolor"
+            android:text="make payment" />
+
+
+    </LinearLayout>
+    </RelativeLayout>

@@ -1,21 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/android_custom_gridview_layout"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical">
+    android:background="#fafafa">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/box1">
 
-    <ImageView
-        android:id="@+id/grid_image"
-        android:layout_width="95dp"
-        android:layout_height="95dp"
-        android:layout_marginTop="15dp" />
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/daru"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"/>
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="28dp"
+            android:text="Vidhant Matta\nmattavidhant@gmail.com\nFreecharge \nOla Money\nJio Money"
+            android:textStyle="bold"
+            android:textColorHighlight="@color/buttoncolor"
+            android:layout_marginLeft="15dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/box1"
+        android:layout_marginLeft="8dp"
+        android:id="@+id/box2">
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/cameraicon"
+            android:id="@+id/imgscan"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="scan"
+            android:id="@+id/scan"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/round1"
+            />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/box2"
+            android:orientation="horizontal"
+            android:id="@+id/box3">
 
-    <TextView
-        android:id="@+id/grid_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:textSize="15sp" />
-</LinearLayout>
+            <Button
+                android:id="@+id/cart"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/round2"
+                android:text="my cart" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/cart"
+                android:id="@+id/imgcart"
+                />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="8dp"
+        android:layout_below="@+id/box3"
+        android:layout_marginTop="30dp"
+        android:id="@+id/box4">
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/payment"
+            android:id="@+id/imgpayment"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="make payment"
+            android:id="@+id/payment"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/round1"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/box4"
+        android:orientation="horizontal"
+        android:id="@+id/box5">
+
+        <Button
+            android:id="@+id/shophistory"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/round2"
+            android:text="shopping history" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/history"
+            android:id="@+id/imgshophistory"
+            />
+    </LinearLayout>
+    </RelativeLayout>

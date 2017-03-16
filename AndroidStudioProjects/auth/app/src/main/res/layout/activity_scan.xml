@@ -1,160 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/background">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:id="@+id/box1"
+        android:weightSum="1">
 
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".scan">
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/daru"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"/>
 
+
+        <TextView
+            android:id="@+id/textname"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="28dp"
+            android:text="Vidhant Matta\nmattavidhant@gmail.com"
+            android:textColorHighlight="@color/buttoncolor"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/box1"
+        android:layout_marginLeft="8dp"
+        android:id="@+id/box2">
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/cameraicon"
+            android:id="@+id/imgscan"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="scan"
+            android:id="@+id/scan"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/round1"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginRight="8dp"
+
+        android:layout_below="@+id/box2"
+        android:orientation="horizontal"
+        android:id="@+id/box3">
+
+        <Button
+            android:id="@+id/cart"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/round2"
+            android:text="my cart" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/cart"
+            android:id="@+id/imgcart"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="8dp"
+        android:layout_below="@+id/box3"
+
+        android:id="@+id/box4">
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/payment"
+            android:id="@+id/imgpayment"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="make payment"
+            android:id="@+id/payment"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/round1"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginRight="8dp"
+
+        android:layout_below="@+id/box4"
+        android:orientation="horizontal"
+        android:id="@+id/box5">
+
+        <Button
+            android:id="@+id/shophistory"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+
+            android:layout_marginTop="5dp"
+            android:background="@drawable/round2"
+            android:text="shopping history" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/history"
+            android:id="@+id/imgshophistory"
+            />
+    </LinearLayout>
 
     <ImageView
-        android:layout_width="match_parent"
-        app:srcCompat="@drawable/daru"
-        android:id="@+id/imageView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="14dp"
-
-        android:layout_height="154dp"
-
-        android:layout_alignParentRight="true" />
-
-    <ImageButton
-        android:background="@color/white"
-        app:srcCompat="@drawable/inventory2_72"
-        android:id="@+id/history"
-
-        android:layout_alignTop="@+id/scan"
-        android:layout_alignParentEnd="true"
-        android:scaleType="fitXY"
-        android:adjustViewBounds="true"
-
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginBottom="20dp"
-        android:layout_alignParentRight="true" />
-
-    <ImageButton
-        android:background="@color/white"
-        app:srcCompat="@drawable/shoping_cart_72"
-        android:id="@+id/cart"
-        android:scaleType="fitXY"
-        android:adjustViewBounds="true"
-
-
-        android:layout_height="72dp"
-        android:layout_width="72dp"
-        android:layout_below="@+id/history"
-        android:layout_alignLeft="@+id/history"
-        android:layout_alignStart="@+id/history"
-        android:layout_marginTop="29dp" />
-
-    <ImageButton
-        android:background="@color/white"
-        app:srcCompat="@drawable/bill_72"
-        android:id="@+id/wallet"
-        android:scaleType="fitXY"
-
-
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:adjustViewBounds="true"
-        android:layout_alignTop="@+id/cart"
-        android:layout_toLeftOf="@+id/textView"
-        android:layout_toStartOf="@+id/textView" />
-
-    <ImageButton
-        android:background="@color/white"
-        app:srcCompat="@drawable/barcode_72"
-        android:id="@+id/scan"
-        android:scaleType="fitXY"
-
-        android:adjustViewBounds="true"
-
-        android:layout_height="72dp"
-        android:layout_width="72dp"
-        android:layout_below="@+id/textView"
-        android:layout_alignLeft="@+id/wallet"
-        android:layout_alignStart="@+id/wallet"
-        android:layout_marginTop="51dp" />
-
-    <TextView
-        android:text="@string/gridtext"
-        android:layout_width="160dp"
-
-        android:id="@+id/textView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:layout_height="35dp"
-        android:scrollbarAlwaysDrawHorizontalTrack="true"
-        android:textSize="30sp"
-        android:layout_marginTop="21dp"
-        android:layout_below="@+id/imageView"
-        android:layout_alignRight="@+id/history"
-        android:layout_alignEnd="@+id/history"
-        android:layout_marginRight="31dp"
-        android:layout_marginEnd="31dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/scan"
-        android:layout_below="@+id/scan"
-        android:layout_alignRight="@+id/scan"
-        android:layout_alignEnd="@+id/scan"
-        android:layout_alignLeft="@+id/scan"
-        android:layout_alignStart="@+id/scan"
-        android:textAlignment="center"
-        />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/records"
-        android:layout_above="@+id/cart"
-        android:layout_alignLeft="@+id/history"
-        android:layout_alignStart="@+id/history"
-        android:layout_alignRight="@+id/history"
-        android:layout_alignEnd="@+id/history"
-        android:textAlignment="center"
-        android:layout_marginLeft="11dp"
-        />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/payment"
-        android:layout_below="@+id/wallet"
-        android:layout_alignLeft="@+id/wallet"
-        android:layout_alignStart="@+id/wallet"
-        android:layout_alignRight="@+id/wallet"
-        android:layout_alignEnd="@+id/wallet"
-        android:textAlignment="center"
-        android:layout_marginLeft="6dp"
-        />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/cart"
-        android:layout_alignRight="@+id/cart"
-        android:layout_alignTop="@+id/textView7"
-        android:text="@string/cart"
-        android:layout_alignLeft="@+id/cart"
-        android:layout_alignStart="@+id/cart"
-        android:textAlignment="center"/>
-
-
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/box2"
+        android:layout_alignLeft="@+id/box2"
+        android:layout_alignStart="@+id/box2"
+        android:layout_marginBottom="110dp"
+        android:layout_marginLeft="180dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginStart="211dp"
+        android:background="@drawable/freecharge" />
 </RelativeLayout>

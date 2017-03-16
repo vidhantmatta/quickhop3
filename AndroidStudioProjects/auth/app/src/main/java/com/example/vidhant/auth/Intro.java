@@ -40,7 +40,7 @@ public class Intro extends AppIntro {
 
     private void hideStatusBar() {
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
 
             Window window = getWindow();
 
